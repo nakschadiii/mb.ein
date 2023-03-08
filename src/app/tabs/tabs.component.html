@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+<div style="height: 100%;display: flex;">
+    <div class="w3-border-right w3-border-white" style="MIN-WIDTH: fit-content;">
+        <ng-container *ngFor="let item of items; let i = index">
+            <a href="/project/{{ i }}" style="text-decoration: none;">
+                <div style="padding: .7em; font-size: small;" class="w3-aqua w3-round-large w3-margin">{{ item.title }}</div>
+            </a>
+        </ng-container>
+    </div>
+    <div style="width: 100%;" class="w3-padding-large">
+        <!-- {{ items[id] }} -->
+        <img [src]="items[id].imageUrl" alt="" style="width:100%">
+        <div class="w3-container">
+            <h4><b>{{ items[id].title }}</b></h4>
+            <p>{{ items[id].description }} - <a [href]="items[id].link">{{ items[id].link }}</a></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openLink(evt, animName) {
+      var i, x, tablinks;
+      x = document.getElementsByClassName("city");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < x.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+      }
+      document.getElementById(animName).style.display = "block";
+      evt.currentTarget.className += " w3-red";
+    }
+</script>

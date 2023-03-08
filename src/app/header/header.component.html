@@ -1,0 +1,8 @@
+<header>
+  <span>MB.EIN</span>
+  <button (click)="toggleMenu()"><i class="fa fa-bars"></i></button>
+  <nav [ngClass]="{'open': isMenuOpen}">
+    <a routerLink="/">Accueil</a>
+    <a routerLink="/about">A propos</a>
+  </nav>
+</header>
